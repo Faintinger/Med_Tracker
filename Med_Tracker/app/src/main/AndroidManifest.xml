@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="itesm.mx.proyecto_moviles">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".medServ"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver android:name=".AutoStart">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegistrateActivity"
+            android:label="@string/registro"/>
+
+        <activity android:name=".AgregarMedicamentos"
+            android:label="@string/agregar_medicamento"/>
+
+        <activity android:name=".AgregarMedicamento"
+            android:label="@string/agregar_medicamento"/>
+
+        <activity android:name=".RegistrarMedico"
+            android:label="@string/registrar_medico"/>
+
+        <activity android:name=".MedicosRegistrados"
+            android:label="@string/medicos"/>
+
+        <activity android:name=".CalendarioActivity"
+            android:label="@string/calendario"/>
+
+        <activity android:name=".MedicamentoPendiente"
+            android:label="@string/pendiente"/>
+
+        <activity android:name=".UserActivity"
+            android:label="@string/usuario"/>
+
+        <activity android:name=".Medicos"
+            android:label="@string/lista_medico"/>
+
+        <activity android:name=".Historial"
+            android:label="@string/historial"/>
+
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="itesm.mx.proyecto_moviles.ALARMA" />
+            </intent-filter>
+
+        </receiver>
+    </application>
+
+</manifest>
